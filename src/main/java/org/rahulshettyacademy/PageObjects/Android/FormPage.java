@@ -1,18 +1,22 @@
 package org.rahulshettyacademy.PageObjects.Android;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.rahulshettyacademy.utils.AndroidActions;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class FormPage {
+public class FormPage extends AndroidActions{
 	
 	AndroidDriver driver;
 	
-	public FormPage(AndroidDriver driver) {
+	public FormPage(AndroidDriver driver)
+	{
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
@@ -33,6 +37,9 @@ public class FormPage {
 	
 	@AndroidFindBy(id="android:id/text1")
 	private WebElement countrySelection;
+	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
+	private WebElement shopButton;
 		
 	
 	public void setNameField(String name) {
@@ -49,8 +56,16 @@ public class FormPage {
 		
 	}
 	
-	public void setCountryName() {
+	public void setCountrySelection(String countryName) {
 		countrySelection.click();
+		scrollToText(countryName);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='"+countryName+"']")).click();
+	}
+	
+	public ProductCatalogPage submitForm() {
+		shopButton.click();
+		return new ProductCatalogPage(driver);
+		
 	}
 	
 
