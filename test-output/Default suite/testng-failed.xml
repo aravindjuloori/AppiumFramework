@@ -6,8 +6,9 @@
       <class name="org.rahulshettyacademy.AndroidTests.Ecommerce_tc3_hybrid">
         <methods>
           <include name="configureAppium"/>
-          <include name="fillform"/>
           <include name="tearDown"/>
+          <include name="fillform" invocation-numbers="1"/>
+          <include name="preSetup"/>
         </methods>
       </class> <!-- org.rahulshettyacademy.AndroidTests.Ecommerce_tc3_hybrid -->
     </classes>

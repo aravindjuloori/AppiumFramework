@@ -20,7 +20,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class BaseTest {
+public class AndroidBaseTest {
 
 	public AndroidDriver driver;
 	public AppiumDriverLocalService service;
@@ -46,6 +46,10 @@ public class BaseTest {
 
 		// options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\General-Store.apk");
+		
+		options.setAutoGrantPermissions(true);
+		options.setNoReset(false);
+		
 
 		// Android device or ios device
 		// appium code --> appium server
@@ -57,18 +61,7 @@ public class BaseTest {
 
 	}
 
-	public void longPressAction(WebElement ele) {
-		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
-				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "duration", 2000));
-
-	}
 	
-	
-	public Double getFormattedAmount(String amount) {
-		Double price = Double.parseDouble(amount.substring(1));
-		return price;
-
-	}
 
 	@AfterClass
 	public void tearDown() {

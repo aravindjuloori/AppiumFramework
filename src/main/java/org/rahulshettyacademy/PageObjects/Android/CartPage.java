@@ -10,6 +10,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
+//Appium Utils -->Android Actions -->CartPage
 public class CartPage extends AndroidActions {
 	AndroidDriver driver;
 
@@ -56,11 +57,7 @@ public class CartPage extends AndroidActions {
 
 	}
 	
-	public Double getFormattedAmount(String amount) {
-		Double price = Double.parseDouble(amount.substring(1));
-		return price;
-
-	}
+	
 	
 	public Double getTotalAmountDisplayed() {
 	return	getFormattedAmount(totalAmount.getText());
@@ -72,7 +69,8 @@ public class CartPage extends AndroidActions {
 	}
 	
 	public void submitOrder() {
-		
+		checkBox.click();
+		proceedBtn.click();
 	}
 }
 
