@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="Suite">
+<listeners>
+<listener class-name="org.rahulshettyacademy.TestUtils.Listeners"/>
+</listeners>
   <test thread-count="5" name="E2EFrameWorkTest">
     <classes>
      <class name="org.rahulshettyacademy.AndroidTests.Ecommerce_tc3_hybrid"/>

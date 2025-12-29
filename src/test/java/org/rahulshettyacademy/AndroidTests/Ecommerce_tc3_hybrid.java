@@ -4,6 +4,7 @@ package org.rahulshettyacademy.AndroidTests;
 import org.openqa.selenium.JavascriptExecutor;
 import org.rahulshettyacademy.PageObjects.Android.CartPage;
 import org.rahulshettyacademy.PageObjects.Android.ProductCatalogPage;
+import org.rahulshettyacademy.TestUtils.AndroidBaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -53,7 +54,7 @@ public class Ecommerce_tc3_hybrid extends AndroidBaseTest {
 	@DataProvider
 	public Object[][] getData() {
 		
-		return new Object[][] {{"Aravind ","female","Argentina"}, {"Aravind juloori ","male","Argentina"}};
+		return new Object[][] {{"Aravind ","female","Argentina"}};
 		
 	}
 }

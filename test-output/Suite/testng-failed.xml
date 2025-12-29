@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test thread-count="5" name="ErrorValidations test(failed)">
+    <classes>
+      <class name="org.rahulshettyacademy.AndroidTests.Ecommerce_tc1">
+        <methods>
+          <include name="preSetup"/>
+          <include name="fillform_PositiveFlow"/>
+          <include name="configureAppium"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- org.rahulshettyacademy.AndroidTests.Ecommerce_tc1 -->
+    </classes>
+  </test> <!-- ErrorValidations test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
