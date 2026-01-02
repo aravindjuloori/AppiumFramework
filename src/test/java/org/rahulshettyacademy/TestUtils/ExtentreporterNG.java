@@ -13,7 +13,7 @@ public class ExtentreporterNG {
 		reporter.config().setReportName("WebAutomationResults");
 		reporter.config().setDocumentTitle("Test Results");
 		
-		 extent=new ExtentReports();
+		extent=new ExtentReports();
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Tester","Aravind");
 		

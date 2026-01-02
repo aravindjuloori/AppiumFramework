@@ -21,13 +21,16 @@ public class AndroidBaseTest extends AppiumUtils {
 	public AppiumDriverLocalService service;
 	public FormPage formPage;
 
-	@BeforeClass
+	@BeforeClass(alwaysRun=true)
 	public void configureAppium() throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
 				+ "//src//main//java//org//rahulshettyacademy//resources//data.properties");
+		String ipAddress=System.getProperty("ipAddress")!=null ? System.getProperty("ipAddress"):prop.getProperty("ipAddress");
 		prop.load(fis);
-		String ipAddress = prop.getProperty("ipAddress");
+		
+		
+		//String ipAddress = prop.getProperty("ipAddress");
 		String port = prop.getProperty("port");
 
 		service = startAppiumServer(ipAddress, Integer.parseInt(port));
@@ -55,7 +58,7 @@ public class AndroidBaseTest extends AppiumUtils {
 
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun=true)
 	public void tearDown() {
 		driver.quit();
 		service.stop(); // to stop the appium server

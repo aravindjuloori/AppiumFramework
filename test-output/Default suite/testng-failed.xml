@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.rahulshettyacademy.AndroidTests.Ecommerce_tc3_hybrid">
+      <class name="org.rahulshettyacademy.AndroidTests.Ecommerce_tc1">
         <methods>
+          <include name="preSetup"/>
+          <include name="fillform_ErrorValidation"/>
           <include name="configureAppium"/>
           <include name="tearDown"/>
-          <include name="fillform" invocation-numbers="1"/>
-          <include name="preSetup"/>
         </methods>
-      </class> <!-- org.rahulshettyacademy.AndroidTests.Ecommerce_tc3_hybrid -->
+      </class> <!-- org.rahulshettyacademy.AndroidTests.Ecommerce_tc1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

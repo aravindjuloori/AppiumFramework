@@ -17,7 +17,7 @@ import io.appium.java_client.android.Activity;
 public class Ecommerce_tc3_hybrid extends AndroidBaseTest {
 	
 	
-	@Test(dataProvider="getData")
+	@Test(dataProvider="getData" ,groups={"Smoke"})
 	public void fillform(String name,String Gender,String country) throws InterruptedException {
 			
 		formPage.setNameField(name);
